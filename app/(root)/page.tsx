@@ -1,11 +1,16 @@
 import React from "react";
 import Header from "@/components/Header";
+import VideoCard from "@/components/VideoCard";
+import { dummyCards } from "@/constants";
 
 const Page = () => {
   return (
     <main className="wrapper page">
       <Header title="Todos os videos" subHeader="Biblioteca" />
-      <h1 className="text-2xl font-karla">Bem vindo Gustavo</h1>
+
+      {dummyCards.map((card, index) => (
+        <VideoCard key={index} {...card} />
+      ))}
     </main>
   );
 };
