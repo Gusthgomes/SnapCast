@@ -20,8 +20,24 @@ const DropdownList = () => {
             />
             Mais recentes
           </figure>
+          <Image
+            src="/assets/icons/arrow-down.svg"
+            alt="arrow-down"
+            width={20}
+            height={20}
+          />
         </div>
       </div>
+
+      {isOpen && (
+        <ul className="dropdown">
+          {["mais recentes", "preferidos"].map((option) => (
+            <li key={option} className="list-item">
+              {option}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
